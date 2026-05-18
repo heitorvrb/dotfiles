@@ -1,0 +1,182 @@
+{
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "terminal.integrated.fontSize": 16,
+    "terminal.external.linuxExec": "ghostty",
+    "workbench.colorTheme": "CoMPhy Gruvbox Pop",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontSize": 16,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.minimap.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.fontLigatures": true,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "window.commandCenter": true,
+    "window.menuBarVisibility": "toggle",
+    "claudeCode.preferredLocation": "panel",
+    "workbench.editor.wrapTabs": true,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/vendor/*/**": true,
+        "**/package-lock.json": true
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "name": "heitor.theme.strings",
+                "scope": [
+                    "string",
+                    "string.quoted.single",
+                    "punctuation.definition.string.begin",
+                    "punctuation.definition.string.end"
+                ],
+                "settings": {
+                    // "foreground": "#ffc9d5"
+                    // "foreground": "#ffb9b9"
+                    "foreground": "#ee9999"
+                    // "foreground": "#a66877"
+                }
+            },
+            {
+                "name": "heitor.theme.semicolon",
+                "scope": [
+                    "punctuation.terminator",
+                ],
+                "settings": {
+                    "foreground": "#00ff00"
+                }
+            }
+        ]
+    },
+    // PHP
+    "php.version": "8.5",
+    "laravel-pint.enable": true,
+    "php.codeLens.enabled": false,
+    "[php]": {
+        "editor.defaultFormatter": "open-southeners.laravel-pint"
+    },
+    // ESLint
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    // Vim
+    "vim.camelCaseMotion.enable": true,
+    "vim.easymotion": true,
+    "vim.hlsearch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.leader": " ",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-b>": false,
+        "<C-c>": false,
+        "<C-d>": false,
+        "<C-i>": false,
+        "<C-k>": false,
+        "<C-p>": false,
+        "<C-t>": false,
+        "<C-x>": false,
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "k",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<Esc><Esc>"
+            ],
+            "commands": [
+                ":nohlsearch"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "f"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "s"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>",
+            ],
+            "commands": [
+                "workbench.action.terminal.toggleTerminal"
+            ]
+        },
+        {
+            "before": [
+                "<C-w>",
+                "o"
+            ],
+            "commands": [
+                "workbench.action.closeOtherEditors"
+            ]
+        },
+        {
+            "before": [
+                "<C-w>",
+                "n"
+            ],
+            "commands": [
+                "workbench.action.files.newUntitledFile"
+            ]
+        },
+    ],
+    // Git
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.blame.editorDecoration.enabled": true,
+    "git-graph.commitDetailsView.location": "Docked to Bottom",
+    "git-graph.dialog.general.referenceInputSpaceSubstitution": "Hyphen",
+    "git-graph.dialog.resetCurrentBranchToCommit.mode": "Hard",
+    "git-graph.dialog.resetUncommittedChanges.mode": "Hard",
+    "git-graph.enhancedAccessibility": true,
+    "git-graph.openToTheRepoOfTheActiveTextEditorDocument": true,
+    "git-graph.maxDepthOfRepoSearch": 3,
+    "git-graph.repository.commits.fetchAvatars": true,
+    "git-graph.repository.fetchAndPrune": true,
+    "git-graph.repository.fetchAndPruneTags": true,
+    "git-graph.dialog.rebase.ignoreDate": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    // End of file
+}

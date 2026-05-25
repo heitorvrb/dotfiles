@@ -160,6 +160,9 @@
             ]
         },
     ],
+    // Clock
+    "dateTime.showSeconds": true,
+    "dateTime.use24HourClock": false,
     // Git
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,

@@ -1,6 +1,7 @@
 vim.pack.add({
     "https://github.com/nvim-mini/mini.nvim",
     "https://github.com/kylechui/nvim-surround",
+    "https://github.com/pocco81/auto-save.nvim",
     "https://github.com/folke/snacks.nvim",
     "https://github.com/coder/claudecode.nvim",
 })

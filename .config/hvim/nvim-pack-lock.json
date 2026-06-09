@@ -4,6 +4,10 @@
       "rev": "bfb04bd50b69d863469b2deb9fb361cf0d945ba7",
       "src": "https://codeberg.org/ficd/ashen.nvim"
     },
+    "auto-save.nvim": {
+      "rev": "979b6c82f60cfa80f4cf437d77446d0ded0addf0",
+      "src": "https://github.com/pocco81/auto-save.nvim"
+    },
     "claudecode.nvim": {
       "rev": "7b8b7090c16f4151401a281741a4bf37050ebd26",
       "src": "https://github.com/coder/claudecode.nvim"

@@ -15,23 +15,14 @@
 -------------------------------------------------------------------------------
 -- Variables
 -------------------------------------------------------------------------------
--- Define your variables here for easy customization throughout the config.
--- This makes it simple to change keybindings, colors, and settings in one place.
-
--- Modifier key: "Mod4" is the Super/Windows key, "Mod1" is Alt
 local modkey = "Mod4"
+-- local terminal = "alacritty"
+local terminal = "ghostty"
 
--- Terminal emulator command (defaults to alacritty)
-local terminal = "alacritty"
-
--- Color palette - customize these to match your theme
--- Alternatively you can import other files in here, such as
--- local colors = require("colors.lua") and make colors.lua a file
--- in the ~/.config/oxwm directory
 local colors = {
     fg = "#bbbbbb",
-    red = "#f7768e",
-    bg = "#1a1b26",
+    -- red = "#f7768e",
+    bg = "#121212",
     cyan = "#0db9d7",
     green = "#9ece6a",
     lavender = "#a9b1d6",
@@ -39,201 +30,104 @@ local colors = {
     grey = "#bbbbbb",
     blue = "#6dade3",
     purple = "#ad8ee6",
+
+    -- Ashen
+    black = "#121212",
+    red = "#B14242",
+    orange = "#D87C4A",
+    yellow = "#E49A44",
+    ashen_blue = "#4A8B8B",
+    magenta = "#a7a7a7",
+    -- cyan = "#b4b4b4",
+    white = "#d5d5d5",
+    dark_grey = "#555555",
+    zero = "#000000",
 }
 
--- Workspace tags - can be numbers, names, or icons (requires a Nerd Font)
-local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+-- local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+local tags = { "z", "a", "s", "d", "f", "g", "x", "c", "v" }
 -- local tags = { "", "󰊯", "", "", "󰙯", "󱇤", "", "󱘶", "󰧮" } -- Example of nerd font icon tags
 
--- Font for the status bar (use "fc-list" to see available fonts)
-local bar_font = "monospace:style=Bold:size=10"
+local bar_font = "JetBrainsMono Nerd Font Mono:style=Bold:size=10"
 
--- Define your blocks
--- Similar to widgets in qtile, or dwmblocks
 local blocks = {
-    oxwm.bar.block.ram({
-        format = "{used} / {total} GB",
-        interval = 5,
-        color = colors.light_blue,
-        underline = true,
-    }),
-    oxwm.bar.block.static({
-        text = "│",
-        interval = 999999999,
-        color = colors.lavender,
-        underline = false,
-    }),
     oxwm.bar.block.shell({
         format = "{}",
-        command = "uname -r",
-        interval = 5,
-        color = colors.red,
-        underline = true,
-    }),
-    oxwm.bar.block.static({
-        text = "│",
-        interval = 999999999,
-        color = colors.lavender,
-        underline = false,
-    }),
-    oxwm.bar.block.datetime({
-        format = "{}",
-        date_format = "%a, %b %d - %-I:%M:%S",
+        command = "date +\"%a, %d %b - %-I:%M:%S\"",
         interval = 1,
-        color = colors.cyan,
-        underline = true,
+        color = colors.ashen_blue,
     }),
 };
 
--------------------------------------------------------------------------------
--- Basic Settings
--------------------------------------------------------------------------------
 oxwm.set_terminal(terminal)
 oxwm.set_modkey(modkey) -- This is for Mod + mouse binds, such as drag/resize
 oxwm.set_tags(tags)
 
--- Set default layout (tiling by default)
--- oxwm.set_layout("tiling")
-
--------------------------------------------------------------------------------
--- Layouts
--------------------------------------------------------------------------------
--- Set custom symbols for layouts (displayed in the status bar)
--- Available layouts: "tiling", "normie" (floating), "grid", "monocle", "tabbed", "dwindle"
 oxwm.set_layout_symbol("tiling", "[T]")
 oxwm.set_layout_symbol("normie", "[F]")
-oxwm.set_layout_symbol("tabbed", "[=]")
--- oxwm.set_layout_symbol("dwindle", "[\\]")
 
--- Example: bind dwindle (fibonacci) layout
--- oxwm.key.bind({ modkey }, "R", oxwm.layout.set("dwindle"))
+oxwm.border.set_width(1)
+oxwm.border.set_focused_color(colors.dark_grey)
+oxwm.border.set_unfocused_color(colors.zero)
 
--- Set default layout of specific tag (tag_index, layout_name)
--- Unset value uses oxwm.set_layout value
--- oxwm.set_tag_layout(1, "grid")
-
--------------------------------------------------------------------------------
--- Appearance
--------------------------------------------------------------------------------
--- Border configuration
-
--- Width in pixels
-oxwm.border.set_width(2)
--- Color of focused window border
-oxwm.border.set_focused_color(colors.blue)
--- Color of unfocused window borders
-oxwm.border.set_unfocused_color(colors.grey)
-
--- Where floating windows spawn: "top-left", "top-center", "top-right",
--- "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right"
 oxwm.set_floating_position("center")
 
 -- Smart Enabled = No border if 1 window
 oxwm.gaps.set_smart(enabled)
 -- Inner gaps (horizontal, vertical) in pixels
-oxwm.gaps.set_inner(5, 5)
+oxwm.gaps.set_inner(3, 3)
 -- Outer gaps (horizontal, vertical) in pixels
-oxwm.gaps.set_outer(5, 5)
+oxwm.gaps.set_outer(3, 3)
 
--------------------------------------------------------------------------------
--- Window Rules
--------------------------------------------------------------------------------
--- Rules allow you to automatically configure windows based on their properties
--- You can match windows by class, instance, title, or role
--- Available properties: floating, tag, fullscreen, etc.
---
--- Common use cases:
--- - Force floating for certain applications (dialogs, utilities)
--- - Send specific applications to specific workspaces
--- - Configure window behavior based on title or class
-
--- Examples (uncomment to use):
 oxwm.rule.add({ instance = "gimp", floating = true })
--- oxwm.rule.add({ class = "Alacritty", tag = 9, focus = true })
--- oxwm.rule.add({ class = "firefox", title = "Library", floating = true })
--- oxwm.rule.add({ class = "firefox", tag = 2 })
--- oxwm.rule.add({ instance = "mpv", floating = true })
+oxwm.rule.add({ class = "discord", tag = 9 })
 
--- To find window properties, use xprop and click on the window
--- WM_CLASS(STRING) shows both instance and class (instance, class)
-
--------------------------------------------------------------------------------
--- Status Bar Configuration
--------------------------------------------------------------------------------
--- Font configuration
 oxwm.bar.set_font(bar_font)
-
--- Position configuration (top/bottom, top is default)
--- oxwm.bar.set_position("bottom")
-
--- Set your blocks here (defined above)
 oxwm.bar.set_blocks(blocks)
 
--- Bar color schemes (for workspace tag display)
--- Parameters: foreground, background, border
-
--- Unoccupied tags
-oxwm.bar.set_scheme_normal(colors.fg, colors.bg, "#444444")
--- Occupied tags
-oxwm.bar.set_scheme_occupied(colors.cyan, colors.bg, colors.cyan)
--- Currently selected tag
-oxwm.bar.set_scheme_selected(colors.cyan, colors.bg, colors.purple)
--- Urgent tags (windows requesting attention)
+oxwm.bar.set_scheme_normal(colors.fg, colors.bg, "#444444") -- Parameters: foreground, background, border
+oxwm.bar.set_scheme_occupied(colors.yellow, colors.bg, colors.yellow)
+oxwm.bar.set_scheme_selected(colors.yellow, colors.bg, colors.yellow)
 oxwm.bar.set_scheme_urgent(colors.red, colors.bg, colors.red)
 
--- Hide tags that have no windows and are not selected
--- oxwm.bar.set_hide_vacant_tags(true)
-
--------------------------------------------------------------------------------
--- Keybindings
--------------------------------------------------------------------------------
--- Keybindings are defined using oxwm.key.bind(modifiers, key, action)
--- Modifiers: {"Mod4"}, {"Mod1"}, {"Shift"}, {"Control"}, or combinations like {"Mod4", "Shift"}
--- Keys: Use uppercase for letters (e.g., "Return", "H", "J", "K", "L")
--- Actions: Functions that return actions (e.g., oxwm.spawn(), oxwm.client.kill())
---
--- A list of available keysyms can be found in the X11 keysym definitions.
--- Common keys: Return, Space, Tab, Escape, Backspace, Delete, Left, Right, Up, Down
-
 -- Basic window management
-
 oxwm.key.bind({ modkey }, "Return", oxwm.spawn_terminal())
-oxwm.key.bind({ modkey }, "R", oxwm.spawn_terminal())
-oxwm.key.bind({ modkey }, "D", oxwm.spawn({ "sh", "-c", "rofi -show drun" }))
+oxwm.key.bind({ modkey }, "R", oxwm.spawn({ "sh", "-c", "rofi -show drun" }))
 oxwm.key.bind({ modkey }, "E", oxwm.spawn("nemo"))
 oxwm.key.bind({ modkey }, "W", oxwm.client.kill())
+
+-- Media keys
+oxwm.key.bind({}, "XF86AudioRaiseVolume", oxwm.spawn({ "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+" }))
+oxwm.key.bind({}, "XF86AudioLowerVolume", oxwm.spawn({ "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-" }))
 
 -- Copy screenshot to clipboard
 oxwm.key.bind({ modkey }, "S", oxwm.spawn({ "sh", "-c", "maim -s | xclip -selection clipboard -t image/png" }))
 
--- Keybind overlay - Shows important keybindings on screen
-oxwm.key.bind({ modkey, "Shift" }, "Slash", oxwm.show_keybinds())
-
 -- Window state toggles
 oxwm.key.bind({ modkey, "Shift" }, "F", oxwm.client.toggle_fullscreen())
-oxwm.key.bind({ modkey, "Shift" }, "Space", oxwm.client.toggle_floating())
+oxwm.key.bind({ modkey, "Shift" }, "Return", oxwm.client.toggle_floating())
 
 -- Layout management
 oxwm.key.bind({ modkey }, "F", oxwm.layout.set("normie"))
 oxwm.key.bind({ modkey }, "C", oxwm.layout.set("tiling"))
--- Cycle through layouts
 oxwm.key.bind({ modkey }, "N", oxwm.layout.cycle())
-
--- Master area controls (tiling layout)
 
 -- Decrease/Increase master area width
 oxwm.key.bind({ modkey }, "H", oxwm.set_master_factor(-5))
 oxwm.key.bind({ modkey }, "Left", oxwm.set_master_factor(-5))
 oxwm.key.bind({ modkey }, "L", oxwm.set_master_factor(5))
 oxwm.key.bind({ modkey }, "Right", oxwm.set_master_factor(5))
+
 -- Enable tiled resize mode: Mod+RMB drag adjusts mfact instead of floating
--- oxwm.tiled_resize_mode(true)
+oxwm.tiled_resize_mode(true)
+
 -- Increment/Decrement number of master windows
 oxwm.key.bind({ modkey }, "I", oxwm.inc_num_master(1))
 oxwm.key.bind({ modkey }, "P", oxwm.inc_num_master(-1))
 
 -- Gaps toggle
 oxwm.key.bind({ modkey }, "A", oxwm.toggle_gaps())
+
 -- Bar toggle
 oxwm.key.bind({ modkey }, "B", oxwm.toggle_bar())
 
@@ -249,9 +143,9 @@ oxwm.key.bind({ modkey, "Shift" }, "Right", oxwm.client.focus_stack(-1))
 
 -- Window movement (swap position in stack)
 oxwm.key.bind({ modkey, "Shift" }, "J", oxwm.client.move_stack(1))
+oxwm.key.bind({ modkey, "Shift", "Control" }, "Right", oxwm.client.move_stack(1))
 oxwm.key.bind({ modkey, "Shift" }, "K", oxwm.client.move_stack(-1))
-
--- Multi-monitor support
+oxwm.key.bind({ modkey, "Shift", "Control" }, "Left", oxwm.client.move_stack(-1))
 
 -- Focus next/previous Monitors
 oxwm.key.bind({ modkey }, "Comma", oxwm.monitor.focus(-1))
@@ -264,7 +158,10 @@ oxwm.key.bind({ modkey, "Shift" }, "Period", oxwm.monitor.tag(1))
 -- Switch to workspace N (tags are 0-indexed, so tag "1" is index 0)
 oxwm.key.bind({ modkey }, "1", oxwm.tag.view(0))
 oxwm.key.bind({ modkey }, "2", oxwm.tag.view(1))
-oxwm.key.bind({ modkey }, "3", oxwm.tag.view(2))
+-- Mod+3: vai para a tag 3 e abre o helium se ele não estiver rodando
+-- (o script usa o bind auxiliar Mod+F3 abaixo para trocar de tag)
+oxwm.key.bind({ modkey }, "3", oxwm.spawn({ "sh", "-c", "~/.config/oxwm/scripts/browser.sh" }))
+oxwm.key.bind({ modkey }, "F3", oxwm.tag.view(2))
 oxwm.key.bind({ modkey }, "4", oxwm.tag.view(3))
 oxwm.key.bind({ modkey }, "5", oxwm.tag.view(4))
 oxwm.key.bind({ modkey }, "6", oxwm.tag.view(5))
@@ -314,21 +211,15 @@ oxwm.key.bind({ modkey, "Control", "Shift" }, "9", oxwm.tag.toggletag(8))
 -- Format: {{modifiers}, key1}, {{modifiers}, key2}, ...
 -- Example: Press Mod4+Space, then release and press T to spawn a terminal
 oxwm.key.chord({
-    { { modkey }, "Space" },
+    { { modkey }, "T" },
     { {},         "T" }
 }, oxwm.spawn_terminal())
 
 -------------------------------------------------------------------------------
 -- Autostart
 -------------------------------------------------------------------------------
--- Commands to run once when OXWM starts
--- Uncomment and modify these examples, or add your own
-
--- oxwm.autostart("picom")
--- oxwm.autostart("feh --bg-scale ~/wallpaper.jpg")
--- oxwm.autostart("dunst")
--- oxwm.autostart("nm-applet")
 oxwm.autostart("/usr/bin/csd-xsettings")
 oxwm.autostart("/usr/libexec/polkit-mate-authentication-agent-1")
-oxwm.autostart("display -window root /home/heitor/Imagens/wall1.jpg")
-oxwm.autostart("xcape -e 'Super_L=Super_L|D'")
+oxwm.autostart("unclutter")
+oxwm.autostart("picom")
+oxwm.autostart("feh --bg-fill /home/heitor/Imagens/wall1.jpg")

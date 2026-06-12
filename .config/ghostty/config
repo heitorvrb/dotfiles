@@ -1,7 +1,7 @@
 theme = ashen
 #theme = Adwaita Dark
 font-size = 13
-window-decoration = none
+#window-decoration = none
 
 keybind = ctrl+f>h=goto_split:left
 keybind = ctrl+f>j=goto_split:bottom

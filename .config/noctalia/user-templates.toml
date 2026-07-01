@@ -1,0 +1,9 @@
+[templates.noctalia-papirus]
+input_path  = "~/.config/noctalia/templates/Noctalia-Papirus.sh"
+output_path = "~/.cache/noctalia/Noctalia-Papirus-apply.sh"
+post_hook   = "bash ~/.cache/noctalia/Noctalia-Papirus-apply.sh"
+
+[templates.nvim-base16]
+input_path = "~/.config/nvim/lua/matugen-template.lua"
+output_path = "~/.config/nvim/lua/matugen.lua"
+post_hook = 'pkill -SIGUSR1 nvim'

@@ -195,6 +195,10 @@ binds {
     // Screenshots
     Print { spawn-sh "noctalia msg screenshot-region"; }
     Shift+Print { spawn-sh "noctalia msg screenshot-fullscreen"; }
+    // Niri's fallback
+    // Print { screenshot; }
+    // Ctrl+Print { screenshot-screen; }
+    // Alt+Print { screenshot-window; }
 
     // Mouse movement with wl-kbptr
     Pause { spawn "wl-kbptr"; }

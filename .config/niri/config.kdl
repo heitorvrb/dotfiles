@@ -100,8 +100,9 @@ binds {
     Pause { spawn-sh "wl-kbptr -o modes=floating,click -o mode_floating.source=detect"; }
     Shift+Pause { spawn "wl-kbptr"; }
 
-    // Mod+O repeat=false { toggle-overview; }
     Mod+B repeat=false { toggle-overview; }
+    Mod+Escape repeat=false { toggle-overview; }
+
     Mod+Q repeat=false { close-window; }
 
     Mod+H     { focus-column-left; }
@@ -167,7 +168,7 @@ binds {
     // Center all fully visible columns on screen.
     Mod+Ctrl+Shift+C { center-visible-columns; }
 
-    // Finer width adjustments.
+    // Finer adjustments.
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
@@ -194,8 +195,8 @@ binds {
 // Startup
 spawn-at-startup "noctalia"
 spawn-sh-at-startup "foot --server"
-spawn-sh-at-startup "/usr/lib/hyprpolkitagent/hyprpolkitagent"
-spawn-sh-at-startup "/usr/lib/xdg-desktop-portal"
+// spawn-sh-at-startup "/usr/lib/hyprpolkitagent/hyprpolkitagent"
+// spawn-sh-at-startup "/usr/lib/xdg-desktop-portal"
 
 hotkey-overlay {
     skip-at-startup

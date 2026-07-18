@@ -1,0 +1,19 @@
+[user]
+	name = Heitor Rodrigues
+	email = heitor.vrb@gmail.com
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[core]
+	editor = nvim
+[diff]
+	tool = codediff
+[difftool]
+	prompt = false
+[merge]
+	tool = codediff
+[difftool "codediff"]
+	cmd = nvim \"$LOCAL\" \"$REMOTE\" +\"CodeDiff file $LOCAL $REMOTE\"
+[mergetool "codediff"]
+	cmd = nvim \"$MERGED\" -c \"CodeDiff merge \\\"$MERGED\\\"\"

@@ -16,6 +16,10 @@
       "rev": "288c9bf8834e5d7e401d1485fb5f684b1c2d7c72",
       "src": "https://github.com/coder/claudecode.nvim"
     },
+    "codediff.nvim": {
+      "rev": "7608f3b436ce1f84a4888f75e53079caa981a2e9",
+      "src": "https://github.com/esmuellert/codediff.nvim"
+    },
     "conform.nvim": {
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -64,6 +68,10 @@
       "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
     "snacks.nvim": {
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "https://github.com/folke/snacks.nvim"
@@ -71,6 +79,14 @@
     "supermaven-nvim": {
       "rev": "07d20fce48a5629686aefb0a7cd4b25e33947d50",
       "src": "https://github.com/supermaven-inc/supermaven-nvim"
+    },
+    "telescope-fzf-native.nvim": {
+      "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",
+      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "427b576c16792edad01a92b89721d923c19ad60f",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "transparent.nvim": {
       "rev": "e00ca1cf09caef575edf8da7e5a8b9193893b4c7",

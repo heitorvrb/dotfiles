@@ -8,6 +8,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 vim.opt.splitright = true
+vim.opt.wrap = false
 
 -- unified clipboard
 vim.opt.clipboard = "unnamedplus"

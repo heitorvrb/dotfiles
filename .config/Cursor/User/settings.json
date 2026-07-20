@@ -70,6 +70,7 @@
         "source.fixAll.eslint": "explicit"
     },
     // Vim
+    "vim.useSystemClipboard": true,
     "vim.camelCaseMotion.enable": true,
     "vim.easymotion": true,
     "vim.hlsearch": true,

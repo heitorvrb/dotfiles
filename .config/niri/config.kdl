@@ -164,6 +164,7 @@ binds {
     Mod+Shift+F { fullscreen-window; }
 
     Mod+Shift+C { center-column; }
+    Mod+Shift+D { expand-column-to-available-width; }
 
     // Center all fully visible columns on screen.
     Mod+Ctrl+Shift+C { center-visible-columns; }

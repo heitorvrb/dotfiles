@@ -10,6 +10,9 @@ require("telescope").setup({
         find_files = {
             hidden = true,
         },
+        colorscheme = {
+            enable_preview = true,
+        },
     },
 })
 require("telescope").load_extension("fzf")
@@ -19,5 +22,7 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>jf", builtin.find_files)
 vim.keymap.set("n", "<leader>js", builtin.live_grep)
 vim.keymap.set("n", "<leader>jb", builtin.buffers)
+vim.keymap.set("n", "<leader>jc", builtin.registers)
 vim.keymap.set("n", "<leader>jg", builtin.git_status)
 vim.keymap.set("n", "<leader>jx", builtin.diagnostics)
+vim.keymap.set("n", "<leader>ja", builtin.builtin)

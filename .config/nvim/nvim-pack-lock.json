@@ -8,10 +8,6 @@
       "rev": "23e5128eb5f629c29532c24a1e733cbe019f05bb",
       "src": "https://github.com/RRethy/base16-nvim"
     },
-    "catppuccin": {
-      "rev": "e068ab5f8261f23f6f71ffd8791ae40315b77b9c",
-      "src": "https://github.com/catppuccin/nvim"
-    },
     "claudecode.nvim": {
       "rev": "288c9bf8834e5d7e401d1485fb5f684b1c2d7c72",
       "src": "https://github.com/coder/claudecode.nvim"

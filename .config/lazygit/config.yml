@@ -1,0 +1,5 @@
+notARepository: skip
+#os:
+#  open: 'setsid footclient -e nvim {{filename}} >/dev/null 2>&1 &'
+git:
+  pruneOnFetch: true

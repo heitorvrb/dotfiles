@@ -109,6 +109,9 @@ $character"""
 disabled = false
 use_12hr = true
 
+[character]
+success_symbol = "[❯](bold #00FF00)"
+error_symbol = "[❯](bold #FF0000)"
 
 # >>> NOCTALIA STARSHIP PALETTE >>>
 # Noctalia Starship Palette

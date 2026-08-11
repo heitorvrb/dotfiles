@@ -1,0 +1,97 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": "none",
+  // "logo": {
+  //   "source": "~/.config/fastfetch/nitch.txt",
+  //   "type": "none",
+  //   "width": 1,
+  //   "position": "top",
+  //   "height": 1,
+  //   "padding": {
+  //     "top": 0,
+  //     "left": 0
+  //   }
+  // },
+  "display": {
+    "separator": " "
+  },
+  "modules": [
+    // {
+    //   "key": "  _____         __        ____  ____\n / ___/__ _____/ /  __ __/ __ \\/ __/\n/ /__/ _ `/ __/ _ \\/ // / /_/ /\\ \\  \n\\___/\\_,_/\\__/_//_/\\_, /\\____/___/  \n                  /___/             ",
+    //   "keyColor": "34;1",
+    //   "type": "custom",
+    // },
+    // "break",
+    {
+      "key": "  ╭───────────╮",
+      "keyColor": "1;1",
+      "type": "custom"
+    },
+    {
+      "key": "  {#39}│ {#31}  {#39}user   {#39}│",
+      "keyColor": "31;1",
+      "outputColor": "31;1",
+      "type": "title",
+      "format": "{user-name}"
+    },
+    {
+      "key": "  {#39}│ {#36}󰌢  {#39}kernel {#39}│",
+      "keyColor": "36;1",
+      "outputColor": "36;1",
+      "type": "kernel",
+      "format": "{1} {2}"
+    },
+    {
+      "key": "  {#39}│ {#34}󰅐  {#39}uptime {#39}│",
+      "keyColor": "34;1",
+      "outputColor": "34;1",
+      "type": "uptime",
+      "format": "{2}h {3}m"
+    },
+    {
+      "key": "  {#39}│ {#32}󰪚  {#39}os age {#39}│",
+      "keyColor": "32;1",
+      "outputColor": "32;1",
+      "type": "command",
+      "shell": "bash",
+      "text": "python3 -c \"import os\nfrom datetime import*;from calendar import*\ni=datetime.fromtimestamp($(stat -c'%W' /etc/machine-id))\nn=datetime.now()\ny=n.year-i.year;m=n.month-i.month;d=n.day-i.day\nif d<0:m-=1;_,dm=monthrange(n.year if m>0 else n.year-1,n.month-1if m>0 else 12);d+=dm\nif m<0:y-=1;m+=12\np=[]\nif y:p.append(f'{y}y')\nif m:p.append(f'{m}m')\nif d:p.append(f'{d}d')\nprint(' '.join(p))\""
+    },
+    {
+      "key": "  {#39}│ {#31}󰏖  {#39}pkgs   {#39}│",
+      "keyColor": "31;1",
+      "outputColor": "31;1",
+      "type": "packages"
+    },
+    {
+      "key": "  {#39}│ {#33}󰍛  {#39}memory {#39}│",
+      "keyColor": "33;1",
+      "outputColor": "33;1",
+      "type": "memory",
+      "format": "{1} | {2}"
+    },
+    {
+      "key": "  {#39}│ {#35}󰋊  {#39}disk   {#39}│",
+      "keyColor": "35;1",
+      "outputColor": "35;1",
+      "type": "disk",
+      "folders": "/",
+      "format": "{1} | {2}"
+    },
+    {
+      "key": "  ├───────────┤",
+      "keyColor": "1;1",
+      "type": "custom"
+    },
+    {
+      "key": "  {#39}│ {#39}  {#39}colors {#39}│",
+      "keyColor": "1;1",
+      "type": "colors",
+      "symbol": "circle"
+    },
+    {
+      "key": "  ╰───────────╯",
+      "keyColor": "1;1",
+      "type": "custom"
+    },
+  ]
+}

@@ -105,6 +105,10 @@ $os\
 $shell\
 $character"""
 
+[git_branch]
+truncation_length = 24
+truncation_symbol = "…"
+
 [time]
 disabled = false
 use_12hr = true

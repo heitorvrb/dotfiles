@@ -1,0 +1,29 @@
+/* Fundo translúcido: só a janela e a área de arquivos.
+   Cabeçalho, abas, sidebar, painel de preview, popovers e diálogos
+   continuam opacos (eles usam @strata_surface e não são tocados aqui).
+
+   Ajuste a opacidade do fundo aqui: 0 = totalmente transparente, 1 = opaco. */
+@define-color strata_fundo alpha(@strata_bg, 0.75);
+
+window {
+  background: @strata_fundo;
+}
+
+/* Camadas da área de arquivos que repintam @strata_bg por cima da janela.
+   Ficam transparentes para não somar opacidade. */
+.columns,
+.directory-column,
+.directory-column scrolledwindow,
+.directory-column viewport,
+.directory-column listview,
+.file-list,
+.mode-icons,
+.mode-icons viewport,
+.mode-icons gridview,
+.mode-list,
+.mode-list viewport,
+.mode-list listview,
+.icons-pane,
+.list-pane {
+  background: transparent;
+}

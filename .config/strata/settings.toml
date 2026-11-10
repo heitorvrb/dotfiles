@@ -45,9 +45,9 @@ search_time_limit = 10
 show_hidden = false
 show_keybinding_hints = true
 show_thumbnails = true
-sidebar_compact = true
+sidebar_compact = false
 sidebar_devices_collapsed = false
-sidebar_expanded = false
+sidebar_expanded = true
 sidebar_order = [
     "home",
     "trash",

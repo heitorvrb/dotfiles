@@ -27,3 +27,18 @@ window {
 .list-pane {
   background: transparent;
 }
+
+/* Barras e sidebar também deixam o fundo da janela aparecer.
+   (Bordas, item selecionado e botões continuam como estão.) */
+headerbar,
+.tab-strip,
+.mode-pane-header,
+.sidebar-shell,
+.sidebar-scroll,
+.sidebar-scroll viewport,
+.sidebar,
+.shortcut-footer,
+.shortcut-footer-button > button:disabled,
+button.shortcut-footer-button:disabled {
+  background: transparent;
+}
